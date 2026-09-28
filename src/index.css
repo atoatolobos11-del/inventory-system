@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+   ROOT CO. design tokens (as CSS variables for reference/overrides)
+--------------------------------------------------------------------------- */
+:root {
+  --sidebar: #181818;
+  --sidebar-deep: #0f0f0e;
+  --page-bg: #f3f5ed;
+  --card: #ffffff;
+  --border: #dee0d9;
+  --text: #181818;
+  --muted: #4d4e4a;
+  --olive: #8c8d40;
+  --olive-light: #edeed9;
+  --soft: #f9f9f2;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-page-bg font-sans text-text;
+  }
+
+  /* Visible, consistent focus rings */
+  :focus-visible {
+    @apply outline-none ring-2 ring-olive ring-offset-1 ring-offset-page-bg;
+  }
+
+  button,
+  a {
+    @apply cursor-pointer;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Scrollbars — subtle, tuned to the dashboard palette
+--------------------------------------------------------------------------- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c9cbc0 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #c9cbc0;
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ---------------------------------------------------------------------------
+   Recharts chart styling (things Tailwind cannot reasonably control)
+--------------------------------------------------------------------------- */
+.recharts-wrapper,
+.recharts-surface {
+  outline: none !important;
+}
+
+.recharts-cartesian-axis-tick text {
+  font-family: inherit;
+  font-size: 11px;
+  fill: #9a9b93;
+}
+
+.recharts-tooltip-cursor {
+  stroke: #c9c8bd;
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+/* Utility: hide horizontal scrollbars on chart hosts */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
