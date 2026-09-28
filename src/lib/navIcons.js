@@ -1,4 +1,13 @@
-import { ChartColumn, HandCoins, Home, Package, Settings, Users, Warehouse } from 'lucide-react'
+import {
+  ChartColumn,
+  Globe,
+  HandCoins,
+  Home,
+  Package,
+  Settings,
+  Users,
+  Warehouse,
+} from 'lucide-react'
 
 /** Maps sidebar section icon keys to Lucide components (one source of truth). */
 export const NAV_ICONS = {
@@ -9,4 +18,5 @@ export const NAV_ICONS = {
   inventory: Warehouse,
   customers: Users,
   setup: Settings,
+  ecommerce: Globe,
 }

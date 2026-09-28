@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 const ALLOWED = new Set([
   'home',
   'sell',
+  'ecommerce',
   'reporting',
   'catalog',
   'inventory',

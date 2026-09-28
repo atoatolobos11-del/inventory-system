@@ -454,6 +454,7 @@ export const purchaseOrdersSummary = {
 export const NAV_ITEMS = [
   { id: 'home', label: 'Home', icon: 'home' },
   { id: 'sell', label: 'Sell', icon: 'sell' },
+  { id: 'ecommerce', label: 'Online Store', icon: 'ecommerce' },
   { id: 'reporting', label: 'Reporting', icon: 'reporting', badge: 2 },
   { id: 'catalog', label: 'Catalog', icon: 'catalog' },
   { id: 'inventory', label: 'Inventory', icon: 'inventory' },

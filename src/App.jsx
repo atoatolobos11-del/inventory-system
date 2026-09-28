@@ -10,6 +10,7 @@ import OrdersModal from './components/dashboard/OrdersModal.jsx'
 import SectionPlaceholder from './components/dashboard/SectionPlaceholder.jsx'
 import SellPage from './components/sell/SellPage.jsx'
 import InventoryPage from './components/inventory/InventoryPage.jsx'
+import EcommerceDashboard from './components/ecommerce/EcommerceDashboard.jsx'
 import { periods, NAV_ITEMS } from './data/dashboardData.js'
 import { useAuth } from './lib/auth.jsx'
 import { useHashRoute } from './lib/useHashRoute.js'
@@ -48,7 +49,7 @@ export default function App() {
     <DashboardLayout
       active={isHome ? 'home' : route}
       headingLines={isHome ? HOME_HEADING : [section.label]}
-      showFilters={isHome}
+      showFilters={isHome || route === 'ecommerce'}
       period={period}
       onPeriodChange={setPeriod}
       outlet={outlet}
@@ -71,6 +72,8 @@ export default function App() {
         <SellPage />
       ) : route === 'inventory' ? (
         <InventoryPage />
+      ) : route === 'ecommerce' ? (
+        <EcommerceDashboard period={period} />
       ) : (
         <SectionPlaceholder sectionId={route} />
       )}
